@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cheekybits/is"
-	"github.com/zxcfer/str/parsers"
+	"github.com/matryer/is"
+	"github.com/zxcfer/xtring/parsers"
 )
 
 var tests = []struct {
@@ -144,7 +144,6 @@ func TestTime(t *testing.T) {
 	timeParser := parsers.Time(time.RFC822)
 	parser := append(DefaultParser, timeParser)
 	val, fn := parser.parseWith(timestr)
-	is.OK(fn)
 	is.Equal(val.(time.Time).Format(time.RFC822), timestr)
 	is.Equal(fmt.Sprint(fn), fmt.Sprint(timeParser))
 }

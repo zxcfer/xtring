@@ -1,7 +1,6 @@
-// Package str provides string parsing capabilities for Go.
+// Package xtring provides string parsing capabilities for Go.
 //
 // Simplest usage
 //
-//     val := str.Parse(s)
-//
+//	val := xtring.Parse(s)
 package str

@@ -1,4 +1,5 @@
-# str [![GoDoc](https://godoc.org/github.com/matryer/str?status.svg)](https://godoc.org/github.com/matryer/str)
+# xtring
+
 String parsing package for Go. Converts strings to best guess value type.
 
 Supported types (in this order):
@@ -13,12 +14,10 @@ Supported types (in this order):
 
 Quoted values are always strings with the quotes stripped.
 
-For examples see the [test code](https://github.com/matryer/str/blob/master/str_test.go#L11-L115).
-
 ## Get started
 
 ```
-go get gopkg.in/matryer/str.v1
+go get gopkg.in/matryer/xtring.v1
 ```
 
 ## Usage
@@ -26,20 +25,20 @@ go get gopkg.in/matryer/str.v1
 The simplest usage:
 
 ```
-val := str.Parse("123")
+val := xtring.Parse("123")
 ```
 
 To add additional `ParseFunc` functions:
 
 ```
-parser := append(str.DefaultParser, toMyRangeType)
+parser := append(xtring.DefaultParser, toMyRangeType)
 val := parser.Parse("[1,3]")
 ```
 
 To use your own parsers entirely, use `New`:
 
 ```
-parser := str.New(toMyRangeType)
+parser := xtring.New(toMyRangeType)
 val := parser.Parse("[1,3]")
 ```
 
@@ -48,6 +47,6 @@ val := parser.Parse("[1,3]")
 To add parsers for time, import the `parsers` package and use the `Time` method:
 
 ```
-parser := append(str.DefaultParser, parsers.Time(time.RFC822))
+parser := append(xtring.DefaultParser, parsers.Time(time.RFC822))
 val := parser.Parse("02 Jan 06 15:04 MST")
 ```

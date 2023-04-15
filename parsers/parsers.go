@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// Time gets a str.ParseFunc that converts a string into
+// Time gets a xtring.ParseFunc that converts a string into
 // a time.Time with the given layout.
 func Time(layout string) func(string) (interface{}, bool) {
 	return func(s string) (interface{}, bool) {
@@ -18,7 +18,7 @@ func Time(layout string) func(string) (interface{}, bool) {
 	}
 }
 
-// Quoted is a str.ParseFunc that removes the quotes from the
+// Quoted is a xtring.ParseFunc that removes the quotes from the
 // specified quoted string.
 func Quoted(s string) (interface{}, bool) {
 	const quotes = "`'\""
@@ -35,18 +35,18 @@ func Quoted(s string) (interface{}, bool) {
 	return nil, false
 }
 
-// Nil is a str.ParseFunc that returns nil.
+// Nil is a xtring.ParseFunc that returns nil.
 func Nil(s string) (interface{}, bool) {
 	return nil, len(s) == 0
 }
 
-// Null is a str.ParseFunc that returns nil if the
+// Null is a xtring.ParseFunc that returns nil if the
 // string is "null".
 func Null(s string) (interface{}, bool) {
 	return nil, strings.ToLower(s) == "null"
 }
 
-// Bool is a str.ParseFunc that converts a string
+// Bool is a xtring.ParseFunc that converts a string
 // into a bool.
 func Bool(s string) (interface{}, bool) {
 	switch strings.ToLower(s) {
@@ -58,7 +58,7 @@ func Bool(s string) (interface{}, bool) {
 	return nil, false
 }
 
-// Int is a str.ParseFunc that converts a string into
+// Int is a xtring.ParseFunc that converts a string into
 // an int.
 func Int(s string) (interface{}, bool) {
 	var err error
@@ -69,7 +69,7 @@ func Int(s string) (interface{}, bool) {
 	return int(val), true
 }
 
-// Int64 is a str.ParseFunc that converts a string into
+// Int64 is a xtring.ParseFunc that converts a string into
 // an int64.
 func Int64(s string) (interface{}, bool) {
 	var err error
@@ -80,7 +80,7 @@ func Int64(s string) (interface{}, bool) {
 	return int64(val), true
 }
 
-// UInt is a str.ParseFunc that converts a string into
+// UInt is a xtring.ParseFunc that converts a string into
 // a uint.
 func UInt(s string) (interface{}, bool) {
 	var err error
@@ -91,7 +91,7 @@ func UInt(s string) (interface{}, bool) {
 	return uint(val), true
 }
 
-// Uint64 is a str.ParseFunc that converts a string into
+// Uint64 is a xtring.ParseFunc that converts a string into
 // a uint64.
 func Uint64(s string) (interface{}, bool) {
 	var err error
@@ -102,7 +102,7 @@ func Uint64(s string) (interface{}, bool) {
 	return uint64(val), true
 }
 
-// Float64 is a str.ParseFunc that converts a string into
+// Float64 is a xtring.ParseFunc that converts a string into
 // a float64.
 func Float64(s string) (interface{}, bool) {
 	var err error
